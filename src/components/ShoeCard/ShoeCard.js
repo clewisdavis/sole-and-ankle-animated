@@ -89,9 +89,12 @@ const Image = styled.img`
   width: 100%;
   /* Define where the origin of the animation is */
   transform-origin: 50% 75%;
-  transition: transform 600ms;
+  transition: 
+    transform 600ms,
+    filter 1000ms;
   /* tell the browswer to use the GPU */
   will-change: transform;
+  filter: brightness(90%);
 
   /* no motion for motion disorder */
   @media (prefers-reduced-motion: no-preference) {
@@ -99,7 +102,10 @@ const Image = styled.img`
     ${Link}:focus & {
       transform: scale(1.1);
       /* enter transition */
-      transition: transform 200ms;
+      transition: 
+        transform 200ms,
+        filter 600ms;
+      filter: brightness(100%);
     }
   }
 
